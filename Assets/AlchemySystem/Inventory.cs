@@ -4,35 +4,39 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Inventory : MonoBehaviour
+public struct ItemStack
 {
-    [System.Serializable]
-    public class ItemStack
+    private Item stackedItem;
+    public Item StackedItem
     {
-        private Item stackedItem;
-        public Item StackedItem
-        {
-            get { return stackedItem; }
-        }
-        public string StackedItemName
-        {
-            get { return stackedItem.name; }
-        }
-
-        private int stackSize;
-        public int StackSize
-        {
-            get { return stackSize; }
-        }
-
-        public ItemStack(Item stackedItem, int stackSize)
-        {
-            this.stackedItem = stackedItem;
-            this.stackSize = stackSize;
-        }
+        get { return stackedItem; }
+    }
+    public string StackedItemName
+    {
+        get { return stackedItem.name; }
     }
 
+    private int stackSize;
+    public int StackSize
+    {
+        get { return stackSize; }
+    }
+
+    public ItemStack(Item stackedItem, int stackSize)
+    {
+        this.stackedItem = stackedItem;
+        this.stackSize = stackSize;
+    }
+}
+
+
+public class Inventory : MonoBehaviour
+{
     [SerializeField]
+    private List<Item> StartingInventory = new List<Item>();
+    [SerializeField]
+    private List<int> StartingInventoryCounts = new List<int>();
+
     public List<ItemStack> inventoryItems = new List<ItemStack>();
 
     List<ItemSlot> itemSlots = new List<ItemSlot>();
@@ -47,6 +51,11 @@ public class Inventory : MonoBehaviour
 
     [SerializeField]
     private GameObject scrollUpButton;
+
+    private void Awake()
+    {
+        GenerateStartingInventory();
+    }
 
     void Start()
     {
@@ -71,7 +80,7 @@ public class Inventory : MonoBehaviour
         {
             if (inventoryItems.Count > displayStartIndex + i)
             {
-                itemSlots[i].item = inventoryItems[displayStartIndex + i].StackedItem;
+                itemSlots[i].SlotItem(inventoryItems[displayStartIndex + i].StackedItem); //.item = inventoryItems[displayStartIndex + i].StackedItem;
             }
             else 
             {
@@ -95,6 +104,18 @@ public class Inventory : MonoBehaviour
         displayStartIndex -= 4;
         if (displayStartIndex < 0) displayStartIndex = 0;
         DisplayInventoryGrid();
+    }
+
+    private void GenerateStartingInventory()
+    {
+        for (int i = 0; i < StartingInventory.Count; i++)
+        {
+            int count;
+            if (i >= StartingInventoryCounts.Count || StartingInventoryCounts[i] < 1) count = 1;
+            else count = StartingInventoryCounts[i];
+            ItemStack newStack = new ItemStack(StartingInventory[i], count);
+            inventoryItems.Add(newStack);
+        }
     }
 
 

@@ -63,8 +63,8 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             if (playerInventory.CheckItemCount(item) == 0)
             {
                 item = null;
-                UpdateGraphic();
             }
+            UpdateGraphic();
         }
     }
 
