@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8290b75b2cbd6af45b7ad408c0444bf8, type: 3}
+  m_Name: Meat Pie
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 21f018150f45ce640bc066fa15f5505d, type: 3}
+  description: Discovered independently by many cultures
+  isConsumable: 1
+  CraftingRequirements:
+  - {fileID: 11400000, guid: 99754e40c67f69349b29f968ca99b7c7, type: 2}
+  - {fileID: 11400000, guid: bf245ab92132b0f4c9b0bc93d7bac499, type: 2}
+  - {fileID: 11400000, guid: e90f02968de388447b04b3819aa9f246, type: 2}
+  CraftingRequirementAmounts: 020000000200000002000000
+  StatsToModify:
+  - Health
+  - Mana
+  - Strength
+  StatModifiers: 190000000a00000002000000

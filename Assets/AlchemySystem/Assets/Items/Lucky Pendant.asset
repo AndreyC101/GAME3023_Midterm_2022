@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8290b75b2cbd6af45b7ad408c0444bf8, type: 3}
+  m_Name: Lucky Pendant
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: e371c2b21c9176049be9165659f8670d, type: 3}
+  description: Brings great luck
+  isConsumable: 1
+  CraftingRequirements:
+  - {fileID: 11400000, guid: f2fcedea16104a444a1b572ef9e6654b, type: 2}
+  - {fileID: 11400000, guid: 0b5b0996eb0fb0f4d9f0257b6162012b, type: 2}
+  CraftingRequirementAmounts: 02000000
+  StatsToModify:
+  - Luck
+  StatModifiers: 05000000

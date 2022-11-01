@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8290b75b2cbd6af45b7ad408c0444bf8, type: 3}
+  m_Name: Froot Joose
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 99fbda0e384c753428e94d7ab4000860, type: 3}
+  description: The cornerstone of a complete brunch
+  isConsumable: 1
+  CraftingRequirements:
+  - {fileID: 11400000, guid: 78943ffd210465049bf5bf8c71af4234, type: 2}
+  - {fileID: 11400000, guid: fc5a9c877f66e5047ba8f3f04c98f5df, type: 2}
+  - {fileID: 11400000, guid: 8edf88457d073c0468283afc8209338a, type: 2}
+  - {fileID: 11400000, guid: 414a0685e28a9a94d9eacf25340b4d1c, type: 2}
+  CraftingRequirementAmounts: 
+  StatsToModify:
+  - Max Mana
+  - Max Health
+  StatModifiers: 0a0000000a000000
